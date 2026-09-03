@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
     />
     <link
       rel="stylesheet"
@@ -25,10 +25,13 @@
         </a>
         <ul class="nav-links">
           <li><a href="#home">Inicio</a></li>
-
           <li><a href="#experiencia">Experiencia Laboral</a></li>
           <li><a href="#habilidades">Proyectos</a></li>
         </ul>
+        <label class="switch-tema" for="checkbox-tema">
+          <input type="checkbox" id="checkbox-tema" />
+          <span class="slider"></span>
+        </label>
       </nav>
     </header>
 
@@ -159,11 +162,6 @@
                 superviso la correcta ejecución de ejercicios y oriento a los
                 usuarios de acuerdo con sus objetivos y necesidades.
               </p>
-              <div class="tecnologias">
-                <span>Atención al cliente</span>
-                <span>Entrenamiento</span>
-                <span>Asesoramiento</span>
-              </div>
             </div>
           </article>
 
@@ -178,12 +176,6 @@
                 mediante JWT y realicé pruebas y validaciones para mejorar la
                 estabilidad y experiencia de usuario.
               </p>
-              <div class="tecnologias">
-                <span>React</span>
-                <span>Node.js</span>
-                <span>PostgreSQL</span>
-                <span>JWT</span>
-              </div>
             </div>
           </article>
 
@@ -197,11 +189,6 @@
                 uso adecuado de equipos y desarrollo de sus sesiones de
                 entrenamiento, promoviendo prácticas seguras y saludables.
               </p>
-              <div class="tecnologias">
-                <span>Atención al cliente</span>
-                <span>Entrenamiento</span>
-                <span>Comunicación</span>
-              </div>
             </div>
           </article>
 
@@ -215,11 +202,6 @@
                 productos electrónicos, brindando atención personalizada y
                 resolviendo consultas según sus necesidades.
               </p>
-              <div class="tecnologias">
-                <span>Atención al cliente</span>
-                <span>Ventas</span>
-                <span>Comunicación</span>
-              </div>
             </div>
           </article>
 
@@ -233,12 +215,6 @@
                 informáticos, instalación de sistemas operativos y actualización
                 de componentes de hardware y software.
               </p>
-              <div class="tecnologias">
-                <span>Windows</span>
-                <span>Hardware</span>
-                <span>Software</span>
-                <span>Soporte técnico</span>
-              </div>
             </div>
           </article>
         </div>
@@ -279,12 +255,6 @@
                 Frontend.
               </p>
 
-              <div class="tecnologias">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JavaScript</span>
-              </div>
-
               <div class="proyecto-enlaces">
                 <a href="#" target="_blank">Ver proyecto</a>
                 <a href="#" target="_blank">GitHub</a>
@@ -304,12 +274,6 @@
                 Aplicación web desarrollada como proyecto práctico para trabajar
                 interfaces dinámicas, manejo de datos y experiencia de usuario.
               </p>
-
-              <div class="tecnologias">
-                <span>React</span>
-                <span>JavaScript</span>
-                <span>CSS</span>
-              </div>
 
               <div class="proyecto-enlaces">
                 <a href="#" target="_blank">Ver proyecto</a>
@@ -331,13 +295,6 @@
                 gestión de datos y comunicación mediante una API.
               </p>
 
-              <div class="tecnologias">
-                <span>React</span>
-                <span>Node.js</span>
-                <span>PostgreSQL</span>
-                <span>JWT</span>
-              </div>
-
               <div class="proyecto-enlaces">
                 <a href="#" target="_blank">Ver proyecto</a>
                 <a href="#" target="_blank">GitHub</a>
@@ -357,13 +314,6 @@
                 Aplicación web con frontend y backend, incluyendo autenticación,
                 gestión de datos y comunicación mediante una API.
               </p>
-
-              <div class="tecnologias">
-                <span>React</span>
-                <span>Node.js</span>
-                <span>PostgreSQL</span>
-                <span>JWT</span>
-              </div>
 
               <div class="proyecto-enlaces">
                 <a href="#" target="_blank">Ver proyecto</a>
@@ -504,7 +454,6 @@
 
         <div class="footer-enlaces">
           <a href="#home">Inicio</a>
-          <a href="#sobre-mi">Sobre mí</a>
           <a href="#experiencia">Experiencia</a>
           <a href="#proyectos">Proyectos</a>
         </div>
@@ -514,5 +463,33 @@
         <p>&copy; 2026 Johannes Cordero.</p>
       </div>
     </footer>
+
+    <script>
+      const toggleTema = document.querySelector('.switch-tema input');
+
+      // Función que aplica o quita la clase
+      function aplicarTema(esClaro) {
+        if (esClaro) {
+          document.documentElement.classList.add('light-mode');
+          localStorage.setItem('tema', 'light');
+        } else {
+          document.documentElement.classList.remove('light-mode');
+          localStorage.setItem('tema', 'dark');
+        }
+      }
+
+      toggleTema.addEventListener('change', (e) => {
+        // Verificamos si el navegador soporta la API de transiciones
+        if (!document.startViewTransition) {
+          aplicarTema(e.target.checked);
+          return;
+        }
+
+        // Ejecutamos la animación de la vista
+        document.startViewTransition(() => {
+          aplicarTema(e.target.checked);
+        });
+      });
+    </script>
   </body>
 </html>
