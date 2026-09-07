@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portafolio de Johannes Cordero, Ingeniero en Sistemas de Información con experiencia en desarrollo web Full Stack y soporte informático." />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -26,7 +27,8 @@
         <ul class="nav-links">
           <li><a href="#home">Inicio</a></li>
           <li><a href="#experiencia">Experiencia Laboral</a></li>
-          <li><a href="#habilidades">Proyectos</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
         </ul>
         <label class="switch-tema" for="checkbox-tema">
           <input type="checkbox" id="checkbox-tema" />
@@ -466,6 +468,13 @@
 
     <script>
       const toggleTema = document.querySelector('.switch-tema input');
+
+      // Restaurar preferencia del usuario
+      const temaGuardado = localStorage.getItem('tema');
+      if (temaGuardado === 'light') {
+        document.documentElement.classList.add('light-mode');
+        toggleTema.checked = true;
+      }
 
       // Función que aplica o quita la clase
       function aplicarTema(esClaro) {
