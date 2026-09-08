@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portafolio de Johannes Cordero, Ingeniero en Sistemas de Información con experiencia en desarrollo web Full Stack y soporte informático." />
+    <meta
+      name="description"
+      content="Portafolio de Johannes Cordero, Ingeniero en Sistemas de Información con experiencia en desarrollo web Full Stack y soporte informático."
+    />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -23,7 +26,9 @@
       <div class="offline-content">
         <i class="ti ti-wifi-off offline-icon"></i>
         <h2 class="offline-title">Sin conexión a Internet</h2>
-        <p class="offline-text">Por favor, revisa tu conexión para seguir navegando.</p>
+        <p class="offline-text">
+          Por favor, revisa tu conexión para seguir navegando.
+        </p>
       </div>
     </div>
 
@@ -275,8 +280,10 @@
               </p>
 
               <div class="proyecto-enlaces">
-                <a href="#" target="_blank">Ver proyecto</a>
-                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  >Ver proyecto</a
+                >
+                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
               </div>
             </div>
           </article>
@@ -295,8 +302,10 @@
               </p>
 
               <div class="proyecto-enlaces">
-                <a href="#" target="_blank">Ver proyecto</a>
-                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  >Ver proyecto</a
+                >
+                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
               </div>
             </div>
           </article>
@@ -315,8 +324,10 @@
               </p>
 
               <div class="proyecto-enlaces">
-                <a href="#" target="_blank">Ver proyecto</a>
-                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  >Ver proyecto</a
+                >
+                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
               </div>
             </div>
           </article>
@@ -335,8 +346,10 @@
               </p>
 
               <div class="proyecto-enlaces">
-                <a href="#" target="_blank">Ver proyecto</a>
-                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  >Ver proyecto</a
+                >
+                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
               </div>
             </div>
           </article>
@@ -407,7 +420,12 @@
               </div>
             </a>
 
-            <a href="#" class="contacto-item" target="_blank">
+            <a
+              href="#"
+              class="contacto-item"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -432,7 +450,12 @@
               </div>
             </a>
 
-            <a href="#" class="contacto-item" target="_blank">
+            <a
+              href="#"
+              class="contacto-item"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -485,52 +508,52 @@
 
     <script>
       // Manejo de la pantalla sin conexión
-      const offlineScreen = document.getElementById('offline-screen');
+      const offlineScreen = document.getElementById("offline-screen");
 
       function updateOnlineStatus() {
         if (navigator.onLine) {
-          offlineScreen.classList.add('offline-hidden');
+          offlineScreen.classList.add("offline-hidden");
         } else {
-          offlineScreen.classList.remove('offline-hidden');
+          offlineScreen.classList.remove("offline-hidden");
         }
       }
 
-      window.addEventListener('online', updateOnlineStatus);
-      window.addEventListener('offline', updateOnlineStatus);
+      window.addEventListener("online", updateOnlineStatus);
+      window.addEventListener("offline", updateOnlineStatus);
 
       // Chequear el estado inicial al cargar
       updateOnlineStatus();
 
       // Ocultar pantalla de carga al terminar de cargar la página
-      window.addEventListener('load', () => {
-        const loader = document.getElementById('loader');
+      window.addEventListener("load", () => {
+        const loader = document.getElementById("loader");
         // Agregamos un pequeño retraso para que se vea la animación
         setTimeout(() => {
-          loader.classList.add('loader-hidden');
+          loader.classList.add("loader-hidden");
         }, 1000);
       });
 
-      const toggleTema = document.querySelector('.switch-tema input');
+      const toggleTema = document.querySelector(".switch-tema input");
 
       // Restaurar preferencia del usuario
-      const temaGuardado = localStorage.getItem('tema');
-      if (temaGuardado === 'light') {
-        document.documentElement.classList.add('light-mode');
+      const temaGuardado = localStorage.getItem("tema");
+      if (temaGuardado === "light") {
+        document.documentElement.classList.add("light-mode");
         toggleTema.checked = true;
       }
 
       // Función que aplica o quita la clase
       function aplicarTema(esClaro) {
         if (esClaro) {
-          document.documentElement.classList.add('light-mode');
-          localStorage.setItem('tema', 'light');
+          document.documentElement.classList.add("light-mode");
+          localStorage.setItem("tema", "light");
         } else {
-          document.documentElement.classList.remove('light-mode');
-          localStorage.setItem('tema', 'dark');
+          document.documentElement.classList.remove("light-mode");
+          localStorage.setItem("tema", "dark");
         }
       }
 
-      toggleTema.addEventListener('change', (e) => {
+      toggleTema.addEventListener("change", (e) => {
         // Verificamos si el navegador soporta la API de transiciones
         if (!document.startViewTransition) {
           aplicarTema(e.target.checked);
