@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -166,7 +166,7 @@ header {
 
 .slider::before {
   position: absolute;
-  content: '';
+  content: "";
   height: 24px;
   width: 24px;
   left: 4px;
@@ -470,7 +470,7 @@ input:checked + .slider::before {
 }
 
 .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -486,7 +486,7 @@ input:checked + .slider::before {
 }
 
 .experiencia-item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -7px;
   top: 10px;
