@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portafolio de Johannes Cordero, Ingeniero en Sistemas de Información con experiencia en desarrollo web Full Stack y soporte informático." />
+    <meta
+      name="description"
+      content="Portafolio de Johannes Cordero, Ingeniero en Sistemas de Información con experiencia en desarrollo web Full Stack y soporte informático."
+    />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -46,12 +49,10 @@
           </h1>
           <h2 class="hero__title">Ingeniero en Sistemas de Información</h2>
           <p class="hero__description">
-            Con conocimientos en desarrollo web y soporte informático,
-            actualmente curso una licenciatura en docencia. Mi experiencia como
-            instructor de gimnasio, combinada con mi base técnica, me facilita
-            la resolución de problemas y la comunicación efectiva. Busco
-            oportunidades para aportar valor y continuar creciendo
-            profesionalmente.
+            Ingeniero en Sistemas de Información enfocado en desarrollo web Full
+            Stack y soporte informático. Altamente orientado a la resolución de
+            problemas, comunicación efectiva y aprendizaje continuo. Busco
+            oportunidades para aportar valor técnico y crecer profesionalmente.
           </p>
 
           <div class="hero__socials">
@@ -104,19 +105,18 @@
           <div class="sobre-mi-texto">
             <h3>Desarrollador enfocado en FullStack</h3>
             <p>
-              Soy Ingeniero en Sistemas con experiencia en desarrollo web y
-              soporte informático, y actualmente me encuentro cursando una
-              Licenciatura en Docencia. Cuento con conocimientos en HTML, CSS,
-              JavaScript, React, Node.js y bases de datos SQL y NoSQL, además
-              del manejo de APIs y autenticación.
+              Ingeniero en Sistemas con sólida experiencia en desarrollo web y
+              soporte técnico. Especializado en HTML, CSS, JavaScript, React,
+              Node.js, y gestión de bases de datos relacionales y no
+              relacionales. Competente en la integración de APIs y sistemas de
+              autenticación seguros.
             </p>
 
             <p>
-              Actualmente estoy enfocado en desarrollarme como Full Stack,
-              fortaleciendo mis habilidades en Frontend, Backend y gestión de
-              datos. Como complemento, trabajo como Instructor de Gimnasio, una
-              experiencia que ha potenciado mi disciplina, comunicación efectiva
-              y atención al cliente.
+              Enfocado en el desarrollo Full Stack, optimizando soluciones
+              Frontend y Backend. Mi experiencia previa en roles de atención al
+              cliente y docencia ha fortalecido mi disciplina, habilidades de
+              comunicación y enfoque en el usuario final.
             </p>
           </div>
 
@@ -467,27 +467,27 @@
     </footer>
 
     <script>
-      const toggleTema = document.querySelector('.switch-tema input');
+      const toggleTema = document.querySelector(".switch-tema input");
 
       // Restaurar preferencia del usuario
-      const temaGuardado = localStorage.getItem('tema');
-      if (temaGuardado === 'light') {
-        document.documentElement.classList.add('light-mode');
+      const temaGuardado = localStorage.getItem("tema");
+      if (temaGuardado === "light") {
+        document.documentElement.classList.add("light-mode");
         toggleTema.checked = true;
       }
 
       // Función que aplica o quita la clase
       function aplicarTema(esClaro) {
         if (esClaro) {
-          document.documentElement.classList.add('light-mode');
-          localStorage.setItem('tema', 'light');
+          document.documentElement.classList.add("light-mode");
+          localStorage.setItem("tema", "light");
         } else {
-          document.documentElement.classList.remove('light-mode');
-          localStorage.setItem('tema', 'dark');
+          document.documentElement.classList.remove("light-mode");
+          localStorage.setItem("tema", "dark");
         }
       }
 
-      toggleTema.addEventListener('change', (e) => {
+      toggleTema.addEventListener("change", (e) => {
         // Verificamos si el navegador soporta la API de transiciones
         if (!document.startViewTransition) {
           aplicarTema(e.target.checked);
