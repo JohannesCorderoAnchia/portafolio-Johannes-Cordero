@@ -18,6 +18,15 @@
   </head>
 
   <body>
+    <!-- Pantalla sin conexión -->
+    <div id="offline-screen" class="offline-wrapper offline-hidden">
+      <div class="offline-content">
+        <i class="ti ti-wifi-off offline-icon"></i>
+        <h2 class="offline-title">Sin conexión a Internet</h2>
+        <p class="offline-text">Por favor, revisa tu conexión para seguir navegando.</p>
+      </div>
+    </div>
+
     <!-- Pantalla de carga -->
     <div id="loader" class="loader-wrapper">
       <div class="loader-content">
@@ -475,6 +484,23 @@
     </footer>
 
     <script>
+      // Manejo de la pantalla sin conexión
+      const offlineScreen = document.getElementById('offline-screen');
+
+      function updateOnlineStatus() {
+        if (navigator.onLine) {
+          offlineScreen.classList.add('offline-hidden');
+        } else {
+          offlineScreen.classList.remove('offline-hidden');
+        }
+      }
+
+      window.addEventListener('online', updateOnlineStatus);
+      window.addEventListener('offline', updateOnlineStatus);
+
+      // Chequear el estado inicial al cargar
+      updateOnlineStatus();
+
       // Ocultar pantalla de carga al terminar de cargar la página
       window.addEventListener('load', () => {
         const loader = document.getElementById('loader');
