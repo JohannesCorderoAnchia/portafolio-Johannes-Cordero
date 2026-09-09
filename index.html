@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
+  <meta name="description" id="meta-description"
     content="Portafolio de Johannes Cordero, Ingeniero en Sistemas de Información con experiencia en desarrollo web Full Stack y soporte informático." />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,8 +28,8 @@
       <div class="offline-icon-wrap">
         <i class="ti ti-wifi-off offline-icon"></i>
       </div>
-      <h2 class="offline-title">Sin conexión a Internet</h2>
-      <p class="offline-text">
+      <h2 class="offline-title" data-i18n="offlineTitle">Sin conexión a Internet</h2>
+      <p class="offline-text" data-i18n="offlineText">
         Por favor, revisa tu conexión para seguir navegando.
       </p>
     </div>
@@ -42,7 +42,7 @@
         <span class="loader-name">Johannes</span>
         <span class="loader-surname">Cordero</span>
       </div>
-      <div class="loader-sub">Ingeniero en Sistemas</div>
+      <div class="loader-sub" data-i18n="loaderSub">Ingeniero en Sistemas</div>
       <div class="loader-spinner-container">
         <div class="loader-spinner"></div>
         <div class="loader-spinner-glow"></div>
@@ -58,15 +58,22 @@
       </a>
 
       <ul class="nav-links" id="nav-links">
-        <li><a href="#home" class="nav-item active">Inicio</a></li>
-        <li><a href="#sobre-mi" class="nav-item">Sobre mí</a></li>
-        <li><a href="#experiencia" class="nav-item">Experiencia</a></li>
-        <li><a href="#habilidades" class="nav-item">Habilidades</a></li>
-        <li><a href="#proyectos" class="nav-item">Proyectos</a></li>
-        <li><a href="#contacto" class="nav-item">Contacto</a></li>
+        <li><a href="#home" class="nav-item active" data-i18n="navHome">Inicio</a></li>
+        <li><a href="#sobre-mi" class="nav-item" data-i18n="navAbout">Sobre mí</a></li>
+        <li><a href="#experiencia" class="nav-item" data-i18n="navExp">Experiencia</a></li>
+        <li><a href="#habilidades" class="nav-item" data-i18n="navSkills">Habilidades</a></li>
+        <li><a href="#proyectos" class="nav-item" data-i18n="navProjects">Proyectos</a></li>
+        <li><a href="#contacto" class="nav-item" data-i18n="navContact">Contacto</a></li>
       </ul>
 
       <div class="nav-actions">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma a Inglés" title="Cambiar a Inglés">
+          <i class="ti ti-world" aria-hidden="true"></i>
+          <span class="lang-opt active" data-lang="es">ES</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-opt" data-lang="en">EN</span>
+        </button>
+
         <label class="switch-tema" for="checkbox-tema" title="Alternar tema claro / oscuro">
           <input type="checkbox" id="checkbox-tema" aria-label="Cambiar entre modo claro y oscuro" />
           <span class="slider"></span>
@@ -97,12 +104,12 @@
             <span class="gradient-text">Cordero Anchía</span>
           </h1>
 
-          <h2 class="hero__title">
+          <h2 class="hero__title" data-i18n-html="heroTitle">
             <span class="hero__code-tag">&lt;</span>Ingeniero en Sistemas de Información<span
               class="hero__code-tag">/&gt;</span>
           </h2>
 
-          <p class="hero__description">
+          <p class="hero__description" data-i18n="heroDesc">
             Especializado en desarrollo web Full Stack y soporte informático. Combino experiencia en tecnologías
             modernas (React, Node.js, SQL/NoSQL) con pasión por la resolución de problemas, la arquitectura de datos y
             la experiencia de usuario.
@@ -130,11 +137,11 @@
 
           <div class="hero__cta">
             <a href="#contacto" class="btn btn--primary">
-              <span>Contáctame</span>
+              <span data-i18n="heroContact">Contáctame</span>
               <i class="ti ti-arrow-right"></i>
             </a>
             <a href="#proyectos" class="btn btn--secondary">
-              <span>Ver Proyectos</span>
+              <span data-i18n="heroProjects">Ver Proyectos</span>
             </a>
           </div>
         </div>
@@ -151,7 +158,7 @@
             </div>
             <div class="floating-badge floating-badge--bottom">
               <i class="ti ti-database"></i>
-              <span>Sistemas & APIs</span>
+              <span data-i18n="heroBadgeSystems">Sistemas & APIs</span>
             </div>
           </div>
         </div>
@@ -161,20 +168,20 @@
     <!-- Sobre mí -->
     <section id="sobre-mi" class="section">
       <div class="section-header reveal">
-        <h2 class="section-title">Sobre Mí</h2>
+        <h2 class="section-title" data-i18n="aboutTitle">Sobre Mí</h2>
         <div class="section-divider"></div>
       </div>
 
       <div class="sobre-mi-contenido">
         <div class="sobre-mi-texto reveal">
-          <h3>Ingeniería y Desarrollo Web con Pasión por la Excelencia</h3>
-          <p>
+          <h3 data-i18n="aboutH3">Ingeniería y Desarrollo Web con Pasión por la Excelencia</h3>
+          <p data-i18n="aboutP1">
             Soy Ingeniero en Sistemas con sólida experiencia en desarrollo web Frontend y Backend, así como en soporte
             técnico de infraestructura. Cuento con dominio de HTML5, CSS3, JavaScript moderno, React, Node.js, y gestión
             de bases de datos relacionales y no relacionales.
           </p>
 
-          <p>
+          <p data-i18n="aboutP2">
             Me distingo por mi capacidad de integración ágil en equipos multidisciplinarios, diseño de APIs seguras y
             enfoque centrado en la usabilidad final. Mi experiencia previa en atención al cliente y docencia deportiva
             ha potenciado mi disciplina, resiliencia y habilidades comunicativas.
@@ -183,15 +190,15 @@
           <div class="sobre-mi-highlights">
             <div class="highlight-pill">
               <i class="ti ti-check"></i>
-              <span>Resolución analítica de problemas</span>
+              <span data-i18n="aboutHighlight1">Resolución analítica de problemas</span>
             </div>
             <div class="highlight-pill">
               <i class="ti ti-check"></i>
-              <span>Trabajo en equipo & Adaptabilidad</span>
+              <span data-i18n="aboutHighlight2">Trabajo en equipo & Adaptabilidad</span>
             </div>
             <div class="highlight-pill">
               <i class="ti ti-check"></i>
-              <span>Buenas prácticas de código & Seguridad</span>
+              <span data-i18n="aboutHighlight3">Buenas prácticas de código & Seguridad</span>
             </div>
           </div>
         </div>
@@ -202,8 +209,8 @@
               <i class="ti ti-device-laptop"></i>
             </div>
             <div>
-              <h4>Desarrollo Backend</h4>
-              <p>Node.js, Express, arquitecturas de APIs RESTful y bases de datos SQL y NoSQL.</p>
+              <h4 data-i18n="aboutCard1Title">Desarrollo Backend</h4>
+              <p data-i18n="aboutCard1Desc">Node.js, Express, arquitecturas de APIs RESTful y bases de datos SQL y NoSQL.</p>
             </div>
           </div>
 
@@ -212,8 +219,8 @@
               <i class="ti ti-file-type-html"></i>
             </div>
             <div>
-              <h4>Desarrollo Frontend</h4>
-              <p>Interfaces dinámicas, responsivas y accesibles con React, JavaScript moderno, HTML5 y CSS3.</p>
+              <h4 data-i18n="aboutCard2Title">Desarrollo Frontend</h4>
+              <p data-i18n="aboutCard2Desc">Interfaces dinámicas, responsivas y accesibles con React, JavaScript moderno, HTML5 y CSS3.</p>
             </div>
           </div>
 
@@ -222,8 +229,8 @@
               <i class="ti ti-devices-pc"></i>
             </div>
             <div>
-              <h4>Soporte & Infraestructura</h4>
-              <p>Diagnóstico de hardware y software, mantenimiento de sistemas y soporte técnico resolutivo.</p>
+              <h4 data-i18n="aboutCard3Title">Soporte & Infraestructura</h4>
+              <p data-i18n="aboutCard3Desc">Diagnóstico de hardware y software, mantenimiento de sistemas y soporte técnico resolutivo.</p>
             </div>
           </div>
         </div>
@@ -234,7 +241,7 @@
     <section id="experiencia" class="section">
       <div class="ambient-glow ambient-glow--exp"></div>
       <div class="section-header reveal">
-        <h2 class="section-title">Experiencia Laboral</h2>
+        <h2 class="section-title" data-i18n="expTitle">Experiencia Laboral</h2>
         <div class="section-divider"></div>
       </div>
 
@@ -243,11 +250,11 @@
           <div class="experiencia-node"></div>
           <div class="experiencia-contenido">
             <div class="experiencia-meta">
-              <span class="fecha"><i class="ti ti-calendar"></i> Abr 2026 - Actualidad</span>
+              <span class="fecha" data-i18n-html="exp1Date"><i class="ti ti-calendar"></i> Abr 2026 - Actualidad</span>
               <span class="empresa-badge"><i class="ti ti-building"></i> Arca Gym</span>
             </div>
-            <h3>Instructor de Gimnasio</h3>
-            <p>
+            <h3 data-i18n="exp1Role">Instructor de Gimnasio</h3>
+            <p data-i18n="exp1Desc">
               Brindo asesoramiento personalizado en entrenamiento físico,
               superviso la correcta ejecución de ejercicios y oriento a los
               usuarios de acuerdo con sus objetivos y necesidades.
@@ -259,11 +266,11 @@
           <div class="experiencia-node"></div>
           <div class="experiencia-contenido">
             <div class="experiencia-meta">
-              <span class="fecha"><i class="ti ti-calendar"></i> Jun 2025 - Nov 2025</span>
+              <span class="fecha" data-i18n-html="exp2Date"><i class="ti ti-calendar"></i> Jun 2025 - Nov 2025</span>
               <span class="empresa-badge"><i class="ti ti-building"></i> Pangea Holdings</span>
             </div>
-            <h3>Desarrollador Full Stack</h3>
-            <p>
+            <h3 data-i18n="exp2Role">Desarrollador Full Stack</h3>
+            <p data-i18n="exp2Desc">
               Desarrollé e integré funcionalidades para una aplicación web
               utilizando React, Node.js y PostgreSQL. Implementé autenticación
               mediante JWT y realicé pruebas y validaciones para mejorar la
@@ -276,11 +283,11 @@
           <div class="experiencia-node"></div>
           <div class="experiencia-contenido">
             <div class="experiencia-meta">
-              <span class="fecha"><i class="ti ti-calendar"></i> Mar 2025 - Nov 2025</span>
+              <span class="fecha" data-i18n-html="exp3Date"><i class="ti ti-calendar"></i> Mar 2025 - Nov 2025</span>
               <span class="empresa-badge"><i class="ti ti-building"></i> Natural Gym</span>
             </div>
-            <h3>Instructor de Gimnasio</h3>
-            <p>
+            <h3 data-i18n="exp3Role">Instructor de Gimnasio</h3>
+            <p data-i18n="exp3Desc">
               Orienté a los usuarios en la ejecución correcta de ejercicios,
               uso adecuado de equipos y desarrollo de sus sesiones de
               entrenamiento, promoviendo prácticas seguras y saludables.
@@ -292,11 +299,11 @@
           <div class="experiencia-node"></div>
           <div class="experiencia-contenido">
             <div class="experiencia-meta">
-              <span class="fecha"><i class="ti ti-calendar"></i> May 2024 - Feb 2025</span>
+              <span class="fecha" data-i18n-html="exp4Date"><i class="ti ti-calendar"></i> May 2024 - Feb 2025</span>
               <span class="empresa-badge"><i class="ti ti-building"></i> Fuente de Accesorios PZ</span>
             </div>
-            <h3>Vendedor de Tienda de Electrónica</h3>
-            <p>
+            <h3 data-i18n="exp4Role">Vendedor de Tienda de Electrónica</h3>
+            <p data-i18n="exp4Desc">
               Asesoré a clientes en la selección de accesorios móviles y
               productos electrónicos, brindando atención personalizada y
               resolviendo consultas según sus necesidades.
@@ -308,11 +315,11 @@
           <div class="experiencia-node"></div>
           <div class="experiencia-contenido">
             <div class="experiencia-meta">
-              <span class="fecha"><i class="ti ti-calendar"></i> 2020 - 2024</span>
-              <span class="empresa-badge"><i class="ti ti-building"></i> Independiente</span>
+              <span class="fecha" data-i18n-html="exp5Date"><i class="ti ti-calendar"></i> 2020 - 2024</span>
+              <span class="empresa-badge" data-i18n-html="exp5Company"><i class="ti ti-building"></i> Independiente</span>
             </div>
-            <h3>Técnico de Soporte Informático</h3>
-            <p>
+            <h3 data-i18n="exp5Role">Técnico de Soporte Informático</h3>
+            <p data-i18n="exp5Desc">
               Realicé diagnóstico, mantenimiento y optimización de equipos
               informáticos, instalación de sistemas operativos y actualización
               de componentes de hardware y software.
@@ -325,7 +332,7 @@
     <!-- Habilidades -->
     <section id="habilidades" class="section">
       <div class="section-header reveal">
-        <h2 class="section-title">Habilidades Técnicas</h2>
+        <h2 class="section-title" data-i18n="skillsTitle">Habilidades Técnicas</h2>
         <div class="section-divider"></div>
       </div>
 
@@ -336,7 +343,7 @@
           </div>
           <div class="habilidad-info">
             <span class="habilidad-nombre">HTML5</span>
-            <span class="habilidad-desc">Semántica Web & Accesibilidad</span>
+            <span class="habilidad-desc" data-i18n="skillHtmlDesc">Semántica Web & Accesibilidad</span>
           </div>
         </div>
 
@@ -346,7 +353,7 @@
           </div>
           <div class="habilidad-info">
             <span class="habilidad-nombre">CSS3</span>
-            <span class="habilidad-desc">Flexbox, Grid & Animaciones</span>
+            <span class="habilidad-desc" data-i18n="skillCssDesc">Flexbox, Grid & Animaciones</span>
           </div>
         </div>
 
@@ -356,7 +363,7 @@
           </div>
           <div class="habilidad-info">
             <span class="habilidad-nombre">JavaScript</span>
-            <span class="habilidad-desc">ES6+, DOM & Asincronía</span>
+            <span class="habilidad-desc" data-i18n="skillJsDesc">ES6+, DOM & Asincronía</span>
           </div>
         </div>
 
@@ -366,7 +373,7 @@
           </div>
           <div class="habilidad-info">
             <span class="habilidad-nombre">React</span>
-            <span class="habilidad-desc">Componentes, Hooks & Estado</span>
+            <span class="habilidad-desc" data-i18n="skillReactDesc">Componentes, Hooks & Estado</span>
           </div>
         </div>
 
@@ -376,7 +383,7 @@
           </div>
           <div class="habilidad-info">
             <span class="habilidad-nombre">Node.js</span>
-            <span class="habilidad-desc">Servicios Backend & NPM</span>
+            <span class="habilidad-desc" data-i18n="skillNodeDesc">Servicios Backend & NPM</span>
           </div>
         </div>
 
@@ -386,7 +393,7 @@
           </div>
           <div class="habilidad-info">
             <span class="habilidad-nombre">PostgreSQL</span>
-            <span class="habilidad-desc">SQL, Relaciones & Optimización</span>
+            <span class="habilidad-desc" data-i18n="skillPostgresDesc">SQL, Relaciones & Optimización</span>
           </div>
         </div>
 
@@ -396,7 +403,7 @@
           </div>
           <div class="habilidad-info">
             <span class="habilidad-nombre">Supabase</span>
-            <span class="habilidad-desc">BaaS, Auth & Base de datos</span>
+            <span class="habilidad-desc" data-i18n="skillSupabaseDesc">BaaS, Auth & Base de datos</span>
           </div>
         </div>
 
@@ -406,7 +413,7 @@
           </div>
           <div class="habilidad-info">
             <span class="habilidad-nombre">JWT</span>
-            <span class="habilidad-desc">Autenticación & Sesiones</span>
+            <span class="habilidad-desc" data-i18n="skillJwtDesc">Autenticación & Sesiones</span>
           </div>
         </div>
 
@@ -416,7 +423,7 @@
           </div>
           <div class="habilidad-info">
             <span class="habilidad-nombre">Git & GitHub</span>
-            <span class="habilidad-desc">Control de Versiones & Flujos</span>
+            <span class="habilidad-desc" data-i18n="skillGithubDesc">Control de Versiones & Flujos</span>
           </div>
         </div>
 
@@ -426,7 +433,7 @@
           </div>
           <div class="habilidad-info">
             <span class="habilidad-nombre">APIs REST</span>
-            <span class="habilidad-desc">Integración & Consumo de Servicios</span>
+            <span class="habilidad-desc" data-i18n="skillApiDesc">Integración & Consumo de Servicios</span>
           </div>
         </div>
       </div>
@@ -436,9 +443,9 @@
     <section id="proyectos" class="section">
       <div class="ambient-glow ambient-glow--proj"></div>
       <div class="section-header reveal">
-        <h2 class="section-title">Proyectos Destacados</h2>
+        <h2 class="section-title" data-i18n="projectsTitle">Proyectos Destacados</h2>
         <div class="section-divider"></div>
-        <p class="section-lead">
+        <p class="section-lead" data-i18n="projectsLead">
           Cada proyecto representa una oportunidad para aprender, experimentar y
           aplicar buenas prácticas de ingeniería de software.
         </p>
@@ -472,16 +479,16 @@
               <span class="tag-tech">JavaScript</span>
             </div>
 
-            <h3>Portafolio Personal Web</h3>
+            <h3 data-i18n="proj1Title">Portafolio Personal Web</h3>
 
-            <p>
+            <p data-i18n="proj1Desc">
               Sitio web personal desarrollado con estándares modernos, diseño responsivo, alternancia fluida de tema
               claro/oscuro y micro-interacciones de alto impacto visual.
             </p>
 
             <div class="proyecto-enlaces">
               <a href="#home" class="link-proy link-proy--primary">
-                <span>Ver proyecto</span>
+                <span data-i18n="projViewBtn">Ver proyecto</span>
                 <i class="ti ti-arrow-up-right"></i>
               </a>
               <a href="https://github.com/JohannesCordero" target="_blank" rel="noopener noreferrer"
@@ -526,16 +533,16 @@
               <span class="tag-tech">CSS Grid</span>
             </div>
 
-            <h3>Aplicación Web Interactiva</h3>
+            <h3 data-i18n="proj2Title">Aplicación Web Interactiva</h3>
 
-            <p>
+            <p data-i18n="proj2Desc">
               Aplicación web interactiva desarrollada para la manipulación dinámica del DOM, gestión de estados de
               interfaz, consumo de APIs y experiencia de usuario fluida.
             </p>
 
             <div class="proyecto-enlaces">
               <a href="#" class="link-proy link-proy--primary">
-                <span>Ver proyecto</span>
+                <span data-i18n="projViewBtn">Ver proyecto</span>
                 <i class="ti ti-arrow-up-right"></i>
               </a>
               <a href="https://github.com/JohannesCordero" target="_blank" rel="noopener noreferrer"
@@ -574,16 +581,16 @@
               <span class="tag-tech">JWT</span>
             </div>
 
-            <h3>Aplicación Full Stack & API</h3>
+            <h3 data-i18n="proj3Title">Aplicación Full Stack & API</h3>
 
-            <p>
+            <p data-i18n="proj3Desc">
               Sistema web integral con arquitectura frontend-backend desacoplada, autenticación robusta mediante tokens
               JWT, operaciones CRUD y validación en base de datos.
             </p>
 
             <div class="proyecto-enlaces">
               <a href="#" class="link-proy link-proy--primary">
-                <span>Ver proyecto</span>
+                <span data-i18n="projViewBtn">Ver proyecto</span>
                 <i class="ti ti-arrow-up-right"></i>
               </a>
               <a href="https://github.com/JohannesCordero" target="_blank" rel="noopener noreferrer"
@@ -623,16 +630,16 @@
               <span class="tag-tech">REST APIs</span>
             </div>
 
-            <h3>Gestión de Datos en Tiempo Real</h3>
+            <h3 data-i18n="proj4Title">Gestión de Datos en Tiempo Real</h3>
 
-            <p>
+            <p data-i18n="proj4Desc">
               Aplicación en la nube implementada con Supabase como backend-as-a-service, sincronización de registros en
               tiempo real, políticas RLS y frontend reactivo en React.
             </p>
 
             <div class="proyecto-enlaces">
               <a href="#" class="link-proy link-proy--primary">
-                <span>Ver proyecto</span>
+                <span data-i18n="projViewBtn">Ver proyecto</span>
                 <i class="ti ti-arrow-up-right"></i>
               </a>
               <a href="https://github.com/JohannesCordero" target="_blank" rel="noopener noreferrer"
@@ -650,10 +657,10 @@
     <section id="contacto" class="section">
       <div class="contacto-contenido">
         <div class="contacto-texto reveal">
-          <h2 class="section-title">¿Tienes un proyecto o vacante en mente?</h2>
+          <h2 class="section-title" data-i18n="contactTitle">¿Tienes un proyecto o vacante en mente?</h2>
           <div class="section-divider"></div>
 
-          <p>
+          <p data-i18n="contactDesc">
             Estoy abierto a nuevas oportunidades de trabajo, proyectos colaborativos y desafíos técnicos. Si deseas
             charlar sobre una propuesta o simplemente saludar, contáctame por cualquiera de estos canales.
           </p>
@@ -664,8 +671,8 @@
               <span class="status-point"></span>
             </div>
             <div>
-              <strong>Respuesta rápida garantizada</strong>
-              <p>Normalmente respondo en menos de 24 horas hábiles.</p>
+              <strong data-i18n="contactStatusTitle">Respuesta rápida garantizada</strong>
+              <p data-i18n="contactStatusDesc">Normalmente respondo en menos de 24 horas hábiles.</p>
             </div>
           </div>
         </div>
@@ -676,7 +683,7 @@
               <i class="ti ti-mail"></i>
             </div>
             <div class="contacto-details">
-              <h4>Correo Electrónico</h4>
+              <h4 data-i18n="contactEmail">Correo Electrónico</h4>
               <p>johannescordero30@icloud.com</p>
             </div>
             <i class="ti ti-chevron-right contacto-arrow"></i>
@@ -727,21 +734,21 @@
           <span class="logo-name">Johannes</span>
           <span class="logo-surname">Cordero</span>
         </a>
-        <p class="footer-tagline">Ingeniero en Sistemas de Información | Desarrollador Full Stack</p>
+        <p class="footer-tagline" data-i18n="footerTagline">Ingeniero en Sistemas de Información | Desarrollador Full Stack</p>
       </div>
 
       <div class="footer-enlaces">
-        <a href="#home">Inicio</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#home" data-i18n="navHome">Inicio</a>
+        <a href="#sobre-mi" data-i18n="navAbout">Sobre mí</a>
+        <a href="#experiencia" data-i18n="navExp">Experiencia</a>
+        <a href="#habilidades" data-i18n="navSkills">Habilidades</a>
+        <a href="#proyectos" data-i18n="navProjects">Proyectos</a>
+        <a href="#contacto" data-i18n="navContact">Contacto</a>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 Johannes André Cordero Anchía. Todos los derechos reservados.</p>
+      <p data-i18n="footerCopyright">&copy; 2026 Johannes André Cordero Anchía. Todos los derechos reservados.</p>
     </div>
   </footer>
 
@@ -769,7 +776,220 @@
       }, 700);
     });
 
-    // 3. Control del Tema Claro / Oscuro con View Transitions
+    // 3. Sistema de Internacionalización (i18n) Español / Inglés
+    const translations = {
+      es: {
+        pageTitle: "Johannes Cordero | Ingeniero en Sistemas & Desarrollador Full Stack",
+        metaDesc: "Portafolio de Johannes Cordero, Ingeniero en Sistemas de Información con experiencia en desarrollo web Full Stack y soporte informático.",
+        offlineTitle: "Sin conexión a Internet",
+        offlineText: "Por favor, revisa tu conexión para seguir navegando.",
+        loaderSub: "Ingeniero en Sistemas",
+        navHome: "Inicio",
+        navAbout: "Sobre mí",
+        navExp: "Experiencia",
+        navSkills: "Habilidades",
+        navProjects: "Proyectos",
+        navContact: "Contacto",
+        heroTitle: '<span class="hero__code-tag">&lt;</span>Ingeniero en Sistemas de Información<span class="hero__code-tag">/&gt;</span>',
+        heroDesc: "Especializado en desarrollo web Full Stack y soporte informático. Combino experiencia en tecnologías modernas (React, Node.js, SQL/NoSQL) con pasión por la resolución de problemas, la arquitectura de datos y la experiencia de usuario.",
+        heroContact: "Contáctame",
+        heroProjects: "Ver Proyectos",
+        heroBadgeSystems: "Sistemas & APIs",
+        aboutTitle: "Sobre Mí",
+        aboutH3: "Ingeniería y Desarrollo Web con Pasión por la Excelencia",
+        aboutP1: "Soy Ingeniero en Sistemas con sólida experiencia en desarrollo web Frontend y Backend, así como en soporte técnico de infraestructura. Cuento con dominio de HTML5, CSS3, JavaScript moderno, React, Node.js, y gestión de bases de datos relacionales y no relacionales.",
+        aboutP2: "Me distingo por mi capacidad de integración ágil en equipos multidisciplinarios, diseño de APIs seguras y enfoque centrado en la usabilidad final. Mi experiencia previa en atención al cliente y docencia deportiva ha potenciado mi disciplina, resiliencia y habilidades comunicativas.",
+        aboutHighlight1: "Resolución analítica de problemas",
+        aboutHighlight2: "Trabajo en equipo & Adaptabilidad",
+        aboutHighlight3: "Buenas prácticas de código & Seguridad",
+        aboutCard1Title: "Desarrollo Backend",
+        aboutCard1Desc: "Node.js, Express, arquitecturas de APIs RESTful y bases de datos SQL y NoSQL.",
+        aboutCard2Title: "Desarrollo Frontend",
+        aboutCard2Desc: "Interfaces dinámicas, responsivas y accesibles con React, JavaScript moderno, HTML5 y CSS3.",
+        aboutCard3Title: "Soporte & Infraestructura",
+        aboutCard3Desc: "Diagnóstico de hardware y software, mantenimiento de sistemas y soporte técnico resolutivo.",
+        expTitle: "Experiencia Laboral",
+        exp1Date: '<i class="ti ti-calendar"></i> Abr 2026 - Actualidad',
+        exp1Role: "Instructor de Gimnasio",
+        exp1Desc: "Brindo asesoramiento personalizado en entrenamiento físico, superviso la correcta ejecución de ejercicios y oriento a los usuarios de acuerdo con sus objetivos y necesidades.",
+        exp2Date: '<i class="ti ti-calendar"></i> Jun 2025 - Nov 2025',
+        exp2Role: "Desarrollador Full Stack",
+        exp2Desc: "Desarrollé e integré funcionalidades para una aplicación web utilizando React, Node.js y PostgreSQL. Implementé autenticación mediante JWT y realicé pruebas y validaciones para mejorar la estabilidad y experiencia de usuario.",
+        exp3Date: '<i class="ti ti-calendar"></i> Mar 2025 - Nov 2025',
+        exp3Role: "Instructor de Gimnasio",
+        exp3Desc: "Orienté a los usuarios en la ejecución correcta de ejercicios, uso adecuado de equipos y desarrollo de sus sesiones de entrenamiento, promoviendo prácticas seguras y saludables.",
+        exp4Date: '<i class="ti ti-calendar"></i> May 2024 - Feb 2025',
+        exp4Role: "Vendedor de Tienda de Electrónica",
+        exp4Desc: "Asesoré a clientes en la selección de accesorios móviles y productos electrónicos, brindando atención personalizada y resolviendo consultas según sus necesidades.",
+        exp5Date: '<i class="ti ti-calendar"></i> 2020 - 2024',
+        exp5Company: '<i class="ti ti-building"></i> Independiente',
+        exp5Role: "Técnico de Soporte Informático",
+        exp5Desc: "Realicé diagnóstico, mantenimiento y optimización de equipos informáticos, instalación de sistemas operativos y actualización de componentes de hardware y software.",
+        skillsTitle: "Habilidades Técnicas",
+        skillHtmlDesc: "Semántica Web & Accesibilidad",
+        skillCssDesc: "Flexbox, Grid & Animaciones",
+        skillJsDesc: "ES6+, DOM & Asincronía",
+        skillReactDesc: "Componentes, Hooks & Estado",
+        skillNodeDesc: "Servicios Backend & NPM",
+        skillPostgresDesc: "SQL, Relaciones & Optimización",
+        skillSupabaseDesc: "BaaS, Auth & Base de datos",
+        skillJwtDesc: "Autenticación & Sesiones",
+        skillGithubDesc: "Control de Versiones & Flujos",
+        skillApiDesc: "Integración & Consumo de Servicios",
+        projectsTitle: "Proyectos Destacados",
+        projectsLead: "Cada proyecto representa una oportunidad para aprender, experimentar y aplicar buenas prácticas de ingeniería de software.",
+        proj1Title: "Portafolio Personal Web",
+        proj1Desc: "Sitio web personal desarrollado con estándares modernos, diseño responsivo, alternancia fluida de tema claro/oscuro y micro-interacciones de alto impacto visual.",
+        proj2Title: "Aplicación Web Interactiva",
+        proj2Desc: "Aplicación web interactiva desarrollada para la manipulación dinámica del DOM, gestión de estados de interfaz, consumo de APIs y experiencia de usuario fluida.",
+        proj3Title: "Aplicación Full Stack & API",
+        proj3Desc: "Sistema web integral con arquitectura frontend-backend desacoplada, autenticación robusta mediante tokens JWT, operaciones CRUD y validación en base de datos.",
+        proj4Title: "Gestión de Datos en Tiempo Real",
+        proj4Desc: "Aplicación en la nube implementada con Supabase como backend-as-a-service, sincronización de registros en tiempo real, políticas RLS y frontend reactivo en React.",
+        projViewBtn: "Ver proyecto",
+        contactTitle: "¿Tienes un proyecto o vacante en mente?",
+        contactDesc: "Estoy abierto a nuevas oportunidades de trabajo, proyectos colaborativos y desafíos técnicos. Si deseas charlar sobre una propuesta o simplemente saludar, contáctame por cualquiera de estos canales.",
+        contactStatusTitle: "Respuesta rápida garantizada",
+        contactStatusDesc: "Normalmente respondo en menos de 24 horas hábiles.",
+        contactEmail: "Correo Electrónico",
+        footerTagline: "Ingeniero en Sistemas de Información | Desarrollador Full Stack",
+        footerCopyright: "© 2026 Johannes André Cordero Anchía. Todos los derechos reservados."
+      },
+      en: {
+        pageTitle: "Johannes Cordero | Information Systems Engineer & Full Stack Developer",
+        metaDesc: "Portfolio of Johannes Cordero, Information Systems Engineer experienced in Full Stack web development and IT support.",
+        offlineTitle: "No Internet Connection",
+        offlineText: "Please check your network connection to continue browsing.",
+        loaderSub: "Information Systems Engineer",
+        navHome: "Home",
+        navAbout: "About Me",
+        navExp: "Experience",
+        navSkills: "Skills",
+        navProjects: "Projects",
+        navContact: "Contact",
+        heroTitle: '<span class="hero__code-tag">&lt;</span>Information Systems Engineer<span class="hero__code-tag">/&gt;</span>',
+        heroDesc: "Specializing in Full Stack web development and IT support. I combine experience in modern technologies (React, Node.js, SQL/NoSQL) with a passion for problem-solving, data architecture, and user experience.",
+        heroContact: "Contact Me",
+        heroProjects: "View Projects",
+        heroBadgeSystems: "Systems & APIs",
+        aboutTitle: "About Me",
+        aboutH3: "Engineering & Web Development with Passion for Excellence",
+        aboutP1: "I am an Information Systems Engineer with solid experience in Frontend and Backend web development, as well as IT infrastructure support. Proficient in HTML5, CSS3, modern JavaScript, React, Node.js, and relational and non-relational database management.",
+        aboutP2: "I stand out for my ability to quickly integrate into multidisciplinary teams, design secure APIs, and maintain a user-centered approach. My previous experience in customer service and sports instruction has strengthened my discipline, resilience, and communication skills.",
+        aboutHighlight1: "Analytical Problem Solving",
+        aboutHighlight2: "Teamwork & Adaptability",
+        aboutHighlight3: "Code Best Practices & Security",
+        aboutCard1Title: "Backend Development",
+        aboutCard1Desc: "Node.js, Express, RESTful API architectures, and SQL & NoSQL databases.",
+        aboutCard2Title: "Frontend Development",
+        aboutCard2Desc: "Dynamic, responsive, and accessible interfaces with React, modern JavaScript, HTML5, and CSS3.",
+        aboutCard3Title: "Support & Infrastructure",
+        aboutCard3Desc: "Hardware and software diagnostics, systems maintenance, and proactive technical support.",
+        expTitle: "Work Experience",
+        exp1Date: '<i class="ti ti-calendar"></i> Apr 2026 - Present',
+        exp1Role: "Gym Instructor",
+        exp1Desc: "Provide personalized fitness training advice, supervise proper exercise form, and guide gym members according to their personal goals and needs.",
+        exp2Date: '<i class="ti ti-calendar"></i> Jun 2025 - Nov 2025',
+        exp2Role: "Full Stack Developer",
+        exp2Desc: "Developed and integrated features for a web application using React, Node.js, and PostgreSQL. Implemented JWT authentication and performed testing and validation to improve stability and user experience.",
+        exp3Date: '<i class="ti ti-calendar"></i> Mar 2025 - Nov 2025',
+        exp3Role: "Gym Instructor",
+        exp3Desc: "Guided members on proper exercise techniques, equipment safety, and workout routines, encouraging safe and healthy fitness practices.",
+        exp4Date: '<i class="ti ti-calendar"></i> May 2024 - Feb 2025',
+        exp4Role: "Electronics Sales Associate",
+        exp4Desc: "Advised customers on mobile accessories and consumer electronics, providing personalized assistance and resolving technical inquiries.",
+        exp5Date: '<i class="ti ti-calendar"></i> 2020 - 2024',
+        exp5Company: '<i class="ti ti-building"></i> Freelance',
+        exp5Role: "IT Support Technician",
+        exp5Desc: "Performed computer hardware/software diagnostics, system maintenance and optimization, operating system installation, and component upgrades.",
+        skillsTitle: "Technical Skills",
+        skillHtmlDesc: "Web Semantics & Accessibility",
+        skillCssDesc: "Flexbox, Grid & Animations",
+        skillJsDesc: "ES6+, DOM & Asynchronous JS",
+        skillReactDesc: "Components, Hooks & State",
+        skillNodeDesc: "Backend Services & NPM",
+        skillPostgresDesc: "SQL, Relationships & Optimization",
+        skillSupabaseDesc: "BaaS, Auth & Database",
+        skillJwtDesc: "Authentication & Sessions",
+        skillGithubDesc: "Version Control & Workflows",
+        skillApiDesc: "Integration & Service Consumption",
+        projectsTitle: "Featured Projects",
+        projectsLead: "Each project represents an opportunity to learn, experiment, and apply software engineering best practices.",
+        proj1Title: "Personal Web Portfolio",
+        proj1Desc: "Personal website developed with modern web standards, responsive design, smooth light/dark theme switching, and high-impact visual micro-interactions.",
+        proj2Title: "Interactive Web Application",
+        proj2Desc: "Interactive web application designed for dynamic DOM manipulation, interface state management, API consumption, and smooth user experience.",
+        proj3Title: "Full Stack App & API",
+        proj3Desc: "Full-stack web system with decoupled frontend-backend architecture, robust JWT token authentication, CRUD operations, and database validation.",
+        proj4Title: "Real-Time Data Management",
+        proj4Desc: "Cloud application built with Supabase as a backend-as-a-service, real-time record synchronization, RLS policies, and reactive React frontend.",
+        projViewBtn: "View project",
+        contactTitle: "Have a project or job opening in mind?",
+        contactDesc: "I am open to new job opportunities, collaborative projects, and technical challenges. If you'd like to discuss a proposal or just say hello, feel free to reach out through any of these channels.",
+        contactStatusTitle: "Fast response guaranteed",
+        contactStatusDesc: "Typically responding in under 24 business hours.",
+        contactEmail: "Email Address",
+        footerTagline: "Information Systems Engineer | Full Stack Developer",
+        footerCopyright: "© 2026 Johannes André Cordero Anchía. All rights reserved."
+      }
+    };
+
+    const langToggleBtn = document.getElementById("lang-toggle");
+    const langOpts = document.querySelectorAll(".lang-opt");
+    let currentLang = localStorage.getItem("idioma") || "es";
+
+    function aplicarIdioma(lang) {
+      currentLang = lang;
+      localStorage.setItem("idioma", lang);
+      document.documentElement.lang = lang;
+
+      if (translations[lang].pageTitle) {
+        document.title = translations[lang].pageTitle;
+      }
+      const metaDesc = document.getElementById("meta-description");
+      if (metaDesc && translations[lang].metaDesc) {
+        metaDesc.setAttribute("content", translations[lang].metaDesc);
+      }
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang] && translations[lang][key] !== undefined) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-html");
+        if (translations[lang] && translations[lang][key] !== undefined) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      langOpts.forEach((opt) => {
+        opt.classList.toggle("active", opt.getAttribute("data-lang") === lang);
+      });
+
+      const nextAria = lang === "es" ? "Cambiar idioma a Inglés" : "Switch language to Spanish";
+      langToggleBtn.setAttribute("aria-label", nextAria);
+      langToggleBtn.setAttribute("title", nextAria);
+    }
+
+    if (currentLang !== "es") {
+      aplicarIdioma(currentLang);
+    }
+
+    langToggleBtn.addEventListener("click", () => {
+      const nuevoIdioma = currentLang === "es" ? "en" : "es";
+      if (!document.startViewTransition) {
+        aplicarIdioma(nuevoIdioma);
+        return;
+      }
+      document.startViewTransition(() => {
+        aplicarIdioma(nuevoIdioma);
+      });
+    });
+
+    // 4. Control del Tema Claro / Oscuro con View Transitions
     const toggleTema = document.querySelector(".switch-tema input");
     const temaGuardado = localStorage.getItem("tema");
 
