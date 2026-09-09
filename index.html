@@ -1,567 +1,880 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portafolio de Johannes Cordero, Ingeniero en Sistemas de Información con experiencia en desarrollo web Full Stack y soporte informático."
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
-    />
-    <title>Johannes Cordero</title>
-  </head>
 
-  <body>
-    <!-- Pantalla sin conexión -->
-    <div id="offline-screen" class="offline-wrapper offline-hidden">
-      <div class="offline-content">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portafolio de Johannes Cordero, Ingeniero en Sistemas de Información con experiencia en desarrollo web Full Stack y soporte informático." />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <title>Johannes Cordero | Ingeniero en Sistemas & Desarrollador Full Stack</title>
+</head>
+
+<body>
+  <!-- Pantalla sin conexión -->
+  <div id="offline-screen" class="offline-wrapper offline-hidden" role="alert" aria-live="assertive">
+    <div class="offline-content">
+      <div class="offline-icon-wrap">
         <i class="ti ti-wifi-off offline-icon"></i>
-        <h2 class="offline-title">Sin conexión a Internet</h2>
-        <p class="offline-text">
-          Por favor, revisa tu conexión para seguir navegando.
-        </p>
       </div>
+      <h2 class="offline-title">Sin conexión a Internet</h2>
+      <p class="offline-text">
+        Por favor, revisa tu conexión para seguir navegando.
+      </p>
     </div>
+  </div>
 
-    <!-- Pantalla de carga -->
-    <div id="loader" class="loader-wrapper">
-      <div class="loader-content">
-        <h1 class="loader-name">Johannes Cordero</h1>
+  <!-- Pantalla de carga -->
+  <div id="loader" class="loader-wrapper" aria-hidden="true">
+    <div class="loader-content">
+      <div class="loader-brand">
+        <span class="loader-name">Johannes</span>
+        <span class="loader-surname">Cordero</span>
+      </div>
+      <div class="loader-sub">Ingeniero en Sistemas</div>
+      <div class="loader-spinner-container">
         <div class="loader-spinner"></div>
+        <div class="loader-spinner-glow"></div>
       </div>
     </div>
+  </div>
 
-    <header>
-      <nav class="navbar">
-        <a class="logo" href="#home">
-          <span class="logo-name">Johannes</span>
-          <span class="logo-surname">Cordero</span>
-        </a>
-        <ul class="nav-links">
-          <li><a href="#home">Inicio</a></li>
-          <li><a href="#experiencia">Experiencia Laboral</a></li>
-          <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-        </ul>
-        <label class="switch-tema" for="checkbox-tema">
-          <input type="checkbox" id="checkbox-tema" />
+  <header id="main-header">
+    <nav class="navbar" aria-label="Navegación principal">
+      <a class="logo" href="#home">
+        <span class="logo-name">Johannes</span>
+        <span class="logo-surname">Cordero</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-item active">Inicio</a></li>
+        <li><a href="#sobre-mi" class="nav-item">Sobre mí</a></li>
+        <li><a href="#experiencia" class="nav-item">Experiencia</a></li>
+        <li><a href="#habilidades" class="nav-item">Habilidades</a></li>
+        <li><a href="#proyectos" class="nav-item">Proyectos</a></li>
+        <li><a href="#contacto" class="nav-item">Contacto</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <label class="switch-tema" for="checkbox-tema" title="Alternar tema claro / oscuro">
+          <input type="checkbox" id="checkbox-tema" aria-label="Cambiar entre modo claro y oscuro" />
           <span class="slider"></span>
         </label>
-      </nav>
-    </header>
 
-    <main>
-      <section id="home" class="hero">
-        <div class="hero__content">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false"
+          aria-controls="nav-links">
+          <i class="ti ti-menu-2 icon-open"></i>
+          <i class="ti ti-x icon-close"></i>
+        </button>
+      </div>
+    </nav>
+    <!-- Overlay para móvil -->
+    <div class="nav-backdrop" id="nav-backdrop"></div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="ambient-glow ambient-glow--1"></div>
+      <div class="ambient-glow ambient-glow--2"></div>
+
+      <div class="hero__container">
+        <div class="hero__content reveal">
+
           <h1 class="hero__name">
             Johannes André<br />
-            Cordero Anchía
+            <span class="gradient-text">Cordero Anchía</span>
           </h1>
-          <h2 class="hero__title">Ingeniero en Sistemas de Información</h2>
+
+          <h2 class="hero__title">
+            <span class="hero__code-tag">&lt;</span>Ingeniero en Sistemas de Información<span
+              class="hero__code-tag">/&gt;</span>
+          </h2>
+
           <p class="hero__description">
-            Ingeniero en Sistemas de Información enfocado en desarrollo web Full
-            Stack y soporte informático. Altamente orientado a la resolución de
-            problemas, comunicación efectiva y aprendizaje continuo. Busco
-            oportunidades para aportar valor técnico y crecer profesionalmente.
+            Especializado en desarrollo web Full Stack y soporte informático. Combino experiencia en tecnologías
+            modernas (React, Node.js, SQL/NoSQL) con pasión por la resolución de problemas, la arquitectura de datos y
+            la experiencia de usuario.
           </p>
 
           <div class="hero__socials">
-            <a
-              href="https://www.linkedin.com/in/johannes-cordero-anchia/"
-              class="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.linkedin.com/in/johannes-cordero-anchia/" class="social-link" target="_blank"
+              rel="noopener noreferrer" aria-label="Visitar perfil de LinkedIn">
               <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-              LinkedIn
+              <span>LinkedIn</span>
             </a>
 
-            <a
-              href="https://github.com/JohannesCordero"
-              class="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://github.com/JohannesCordero" class="social-link" target="_blank" rel="noopener noreferrer"
+              aria-label="Visitar perfil de GitHub">
               <i class="fa-brands fa-github" aria-hidden="true"></i>
-              GitHub
+              <span>GitHub</span>
             </a>
 
-            <a
-              href="https://www.instagram.com/"
-              class="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.instagram.com/" class="social-link" target="_blank" rel="noopener noreferrer"
+              aria-label="Visitar perfil de Instagram">
               <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-              Instagram
+              <span>Instagram</span>
             </a>
           </div>
 
-          <a href="#contacto" class="btn btn--primary">Contáctame</a>
-        </div>
-
-        <div class="hero__image-wrapper">
-          <img
-            src="img/Foto.jpeg"
-            alt="Retrato profesional de Johannes Cordero"
-            class="hero__image"
-            fetchpriority="high"
-          />
-        </div>
-      </section>
-
-      <section id="sobre-mi">
-        <div class="sobre-mi-contenido">
-          <div class="sobre-mi-texto">
-            <h3>Desarrollador enfocado en FullStack</h3>
-            <p>
-              Ingeniero en Sistemas con sólida experiencia en desarrollo web y
-              soporte técnico. Especializado en HTML, CSS, JavaScript, React,
-              Node.js, y gestión de bases de datos relacionales y no
-              relacionales. Competente en la integración de APIs y sistemas de
-              autenticación seguros.
-            </p>
-
-            <p>
-              Enfocado en el desarrollo Full Stack, optimizando soluciones
-              Frontend y Backend. Mi experiencia previa en roles de atención al
-              cliente y docencia ha fortalecido mi disciplina, habilidades de
-              comunicación y enfoque en el usuario final.
-            </p>
+          <div class="hero__cta">
+            <a href="#contacto" class="btn btn--primary">
+              <span>Contáctame</span>
+              <i class="ti ti-arrow-right"></i>
+            </a>
+            <a href="#proyectos" class="btn btn--secondary">
+              <span>Ver Proyectos</span>
+            </a>
           </div>
+        </div>
 
-          <div class="sobre-mi-datos">
-            <div class="dato">
-              <span class="dato-icono"
-                ><i class="ti ti-device-laptop"></i
-              ></span>
-              <div>
-                <h4>Desarrollo Backend</h4>
-                <p>Node.js, APIs y bases de datos SQL y NoSQL</p>
-              </div>
+        <div class="hero__image-wrapper reveal">
+          <div class="hero__image-card">
+            <div class="hero__avatar-glow"></div>
+            <div class="hero__avatar-ring"></div>
+            <img src="img/Foto.jpeg" alt="Retrato profesional de Johannes Cordero" class="hero__image"
+              fetchpriority="high" />
+            <div class="floating-badge floating-badge--top">
+              <i class="ti ti-code"></i>
+              <span>Full Stack</span>
             </div>
-
-            <div class="dato">
-              <span class="dato-icono"
-                ><i class="ti ti-file-type-html"></i
-              ></span>
-              <div>
-                <h4>Frontend</h4>
-                <p>HTML, CSS, JavaScript y React</p>
-              </div>
-            </div>
-
-            <div class="dato">
-              <span class="dato-icono"><i class="ti ti-devices-pc"></i></span>
-              <div>
-                <h4>Soporte Técnico</h4>
-                <p>Hardware, software y resolución de problemas</p>
-              </div>
+            <div class="floating-badge floating-badge--bottom">
+              <i class="ti ti-database"></i>
+              <span>Sistemas & APIs</span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="experiencia">
-        <div class="timeline">
-          <article class="experiencia-item">
-            <div class="experiencia-contenido">
-              <span class="fecha">Abr 2026 - Actualidad</span>
-              <h3>Instructor de Gimnasio</h3>
-              <p class="empresa">Arca Gym</p>
-              <p>
-                Brindo asesoramiento personalizado en entrenamiento físico,
-                superviso la correcta ejecución de ejercicios y oriento a los
-                usuarios de acuerdo con sus objetivos y necesidades.
-              </p>
-            </div>
-          </article>
+    <!-- Sobre mí -->
+    <section id="sobre-mi" class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">Sobre Mí</h2>
+        <div class="section-divider"></div>
+      </div>
 
-          <article class="experiencia-item">
-            <div class="experiencia-contenido">
-              <span class="fecha">Jun 2025 - Nov 2025</span>
-              <h3>Desarrollador Full Stack</h3>
-              <p class="empresa">Pangea Holdings</p>
-              <p>
-                Desarrollé e integré funcionalidades para una aplicación web
-                utilizando React, Node.js y PostgreSQL. Implementé autenticación
-                mediante JWT y realicé pruebas y validaciones para mejorar la
-                estabilidad y experiencia de usuario.
-              </p>
-            </div>
-          </article>
+      <div class="sobre-mi-contenido">
+        <div class="sobre-mi-texto reveal">
+          <h3>Ingeniería y Desarrollo Web con Pasión por la Excelencia</h3>
+          <p>
+            Soy Ingeniero en Sistemas con sólida experiencia en desarrollo web Frontend y Backend, así como en soporte
+            técnico de infraestructura. Cuento con dominio de HTML5, CSS3, JavaScript moderno, React, Node.js, y gestión
+            de bases de datos relacionales y no relacionales.
+          </p>
 
-          <article class="experiencia-item">
-            <div class="experiencia-contenido">
-              <span class="fecha">Mar 2025 - Nov 2025</span>
-              <h3>Instructor de Gimnasio</h3>
-              <p class="empresa">Natural Gym</p>
-              <p>
-                Orienté a los usuarios en la ejecución correcta de ejercicios,
-                uso adecuado de equipos y desarrollo de sus sesiones de
-                entrenamiento, promoviendo prácticas seguras y saludables.
-              </p>
-            </div>
-          </article>
+          <p>
+            Me distingo por mi capacidad de integración ágil en equipos multidisciplinarios, diseño de APIs seguras y
+            enfoque centrado en la usabilidad final. Mi experiencia previa en atención al cliente y docencia deportiva
+            ha potenciado mi disciplina, resiliencia y habilidades comunicativas.
+          </p>
 
-          <article class="experiencia-item">
-            <div class="experiencia-contenido">
-              <span class="fecha">May 2024 - Feb 2025</span>
-              <h3>Vendedor de Tienda de Electrónica</h3>
-              <p class="empresa">Fuente de Accesorios PZ</p>
-              <p>
-                Asesoré a clientes en la selección de accesorios móviles y
-                productos electrónicos, brindando atención personalizada y
-                resolviendo consultas según sus necesidades.
-              </p>
+          <div class="sobre-mi-highlights">
+            <div class="highlight-pill">
+              <i class="ti ti-check"></i>
+              <span>Resolución analítica de problemas</span>
             </div>
-          </article>
-
-          <article class="experiencia-item">
-            <div class="experiencia-contenido">
-              <span class="fecha">2020 - 2024</span>
-              <h3>Técnico de Soporte Informático</h3>
-              <p class="empresa">Independiente</p>
-              <p>
-                Realicé diagnóstico, mantenimiento y optimización de equipos
-                informáticos, instalación de sistemas operativos y actualización
-                de componentes de hardware y software.
-              </p>
+            <div class="highlight-pill">
+              <i class="ti ti-check"></i>
+              <span>Trabajo en equipo & Adaptabilidad</span>
             </div>
-          </article>
+            <div class="highlight-pill">
+              <i class="ti ti-check"></i>
+              <span>Buenas prácticas de código & Seguridad</span>
+            </div>
+          </div>
         </div>
-      </section>
 
-      <section id="habilidades">
-        <div class="habilidades-tira">
-          <span><span class="habilidad-texto">HTML5</span></span>
-          <span><span class="habilidad-texto">CSS3</span></span>
-          <span><span class="habilidad-texto">JavaScript</span></span>
-          <span><span class="habilidad-texto">React</span></span>
-          <span><span class="habilidad-texto">Node.js</span></span>
-          <span><span class="habilidad-texto">PostgreSQL</span></span>
-          <span><span class="habilidad-texto">Supabase</span></span>
-          <span><span class="habilidad-texto">JWT</span></span>
-          <span><span class="habilidad-texto">GitHub</span></span>
-          <span><span class="habilidad-texto">APIs</span></span>
+        <div class="sobre-mi-datos reveal">
+          <div class="dato">
+            <div class="dato-icon-box">
+              <i class="ti ti-device-laptop"></i>
+            </div>
+            <div>
+              <h4>Desarrollo Backend</h4>
+              <p>Node.js, Express, arquitecturas de APIs RESTful y bases de datos SQL y NoSQL.</p>
+            </div>
+          </div>
+
+          <div class="dato">
+            <div class="dato-icon-box">
+              <i class="ti ti-file-type-html"></i>
+            </div>
+            <div>
+              <h4>Desarrollo Frontend</h4>
+              <p>Interfaces dinámicas, responsivas y accesibles con React, JavaScript moderno, HTML5 y CSS3.</p>
+            </div>
+          </div>
+
+          <div class="dato">
+            <div class="dato-icon-box">
+              <i class="ti ti-devices-pc"></i>
+            </div>
+            <div>
+              <h4>Soporte & Infraestructura</h4>
+              <p>Diagnóstico de hardware y software, mantenimiento de sistemas y soporte técnico resolutivo.</p>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="proyectos">
-        <p>
+    <!-- Experiencia Laboral -->
+    <section id="experiencia" class="section">
+      <div class="ambient-glow ambient-glow--exp"></div>
+      <div class="section-header reveal">
+        <h2 class="section-title">Experiencia Laboral</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="timeline">
+        <article class="experiencia-item reveal">
+          <div class="experiencia-node"></div>
+          <div class="experiencia-contenido">
+            <div class="experiencia-meta">
+              <span class="fecha"><i class="ti ti-calendar"></i> Abr 2026 - Actualidad</span>
+              <span class="empresa-badge"><i class="ti ti-building"></i> Arca Gym</span>
+            </div>
+            <h3>Instructor de Gimnasio</h3>
+            <p>
+              Brindo asesoramiento personalizado en entrenamiento físico,
+              superviso la correcta ejecución de ejercicios y oriento a los
+              usuarios de acuerdo con sus objetivos y necesidades.
+            </p>
+          </div>
+        </article>
+
+        <article class="experiencia-item reveal">
+          <div class="experiencia-node"></div>
+          <div class="experiencia-contenido">
+            <div class="experiencia-meta">
+              <span class="fecha"><i class="ti ti-calendar"></i> Jun 2025 - Nov 2025</span>
+              <span class="empresa-badge"><i class="ti ti-building"></i> Pangea Holdings</span>
+            </div>
+            <h3>Desarrollador Full Stack</h3>
+            <p>
+              Desarrollé e integré funcionalidades para una aplicación web
+              utilizando React, Node.js y PostgreSQL. Implementé autenticación
+              mediante JWT y realicé pruebas y validaciones para mejorar la
+              estabilidad y experiencia de usuario.
+            </p>
+          </div>
+        </article>
+
+        <article class="experiencia-item reveal">
+          <div class="experiencia-node"></div>
+          <div class="experiencia-contenido">
+            <div class="experiencia-meta">
+              <span class="fecha"><i class="ti ti-calendar"></i> Mar 2025 - Nov 2025</span>
+              <span class="empresa-badge"><i class="ti ti-building"></i> Natural Gym</span>
+            </div>
+            <h3>Instructor de Gimnasio</h3>
+            <p>
+              Orienté a los usuarios en la ejecución correcta de ejercicios,
+              uso adecuado de equipos y desarrollo de sus sesiones de
+              entrenamiento, promoviendo prácticas seguras y saludables.
+            </p>
+          </div>
+        </article>
+
+        <article class="experiencia-item reveal">
+          <div class="experiencia-node"></div>
+          <div class="experiencia-contenido">
+            <div class="experiencia-meta">
+              <span class="fecha"><i class="ti ti-calendar"></i> May 2024 - Feb 2025</span>
+              <span class="empresa-badge"><i class="ti ti-building"></i> Fuente de Accesorios PZ</span>
+            </div>
+            <h3>Vendedor de Tienda de Electrónica</h3>
+            <p>
+              Asesoré a clientes en la selección de accesorios móviles y
+              productos electrónicos, brindando atención personalizada y
+              resolviendo consultas según sus necesidades.
+            </p>
+          </div>
+        </article>
+
+        <article class="experiencia-item reveal">
+          <div class="experiencia-node"></div>
+          <div class="experiencia-contenido">
+            <div class="experiencia-meta">
+              <span class="fecha"><i class="ti ti-calendar"></i> 2020 - 2024</span>
+              <span class="empresa-badge"><i class="ti ti-building"></i> Independiente</span>
+            </div>
+            <h3>Técnico de Soporte Informático</h3>
+            <p>
+              Realicé diagnóstico, mantenimiento y optimización de equipos
+              informáticos, instalación de sistemas operativos y actualización
+              de componentes de hardware y software.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">Habilidades Técnicas</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="habilidades-grid reveal">
+        <div class="habilidad-card" data-skill="html">
+          <div class="habilidad-icon-wrap">
+            <i class="ti ti-brand-html5"></i>
+          </div>
+          <div class="habilidad-info">
+            <span class="habilidad-nombre">HTML5</span>
+            <span class="habilidad-desc">Semántica Web & Accesibilidad</span>
+          </div>
+        </div>
+
+        <div class="habilidad-card" data-skill="css">
+          <div class="habilidad-icon-wrap">
+            <i class="ti ti-brand-css3"></i>
+          </div>
+          <div class="habilidad-info">
+            <span class="habilidad-nombre">CSS3</span>
+            <span class="habilidad-desc">Flexbox, Grid & Animaciones</span>
+          </div>
+        </div>
+
+        <div class="habilidad-card" data-skill="js">
+          <div class="habilidad-icon-wrap">
+            <i class="ti ti-brand-javascript"></i>
+          </div>
+          <div class="habilidad-info">
+            <span class="habilidad-nombre">JavaScript</span>
+            <span class="habilidad-desc">ES6+, DOM & Asincronía</span>
+          </div>
+        </div>
+
+        <div class="habilidad-card" data-skill="react">
+          <div class="habilidad-icon-wrap">
+            <i class="ti ti-brand-react"></i>
+          </div>
+          <div class="habilidad-info">
+            <span class="habilidad-nombre">React</span>
+            <span class="habilidad-desc">Componentes, Hooks & Estado</span>
+          </div>
+        </div>
+
+        <div class="habilidad-card" data-skill="node">
+          <div class="habilidad-icon-wrap">
+            <i class="ti ti-brand-nodejs"></i>
+          </div>
+          <div class="habilidad-info">
+            <span class="habilidad-nombre">Node.js</span>
+            <span class="habilidad-desc">Servicios Backend & NPM</span>
+          </div>
+        </div>
+
+        <div class="habilidad-card" data-skill="postgres">
+          <div class="habilidad-icon-wrap">
+            <i class="ti ti-brand-postgresql"></i>
+          </div>
+          <div class="habilidad-info">
+            <span class="habilidad-nombre">PostgreSQL</span>
+            <span class="habilidad-desc">SQL, Relaciones & Optimización</span>
+          </div>
+        </div>
+
+        <div class="habilidad-card" data-skill="supabase">
+          <div class="habilidad-icon-wrap">
+            <i class="ti ti-brand-supabase"></i>
+          </div>
+          <div class="habilidad-info">
+            <span class="habilidad-nombre">Supabase</span>
+            <span class="habilidad-desc">BaaS, Auth & Base de datos</span>
+          </div>
+        </div>
+
+        <div class="habilidad-card" data-skill="jwt">
+          <div class="habilidad-icon-wrap">
+            <i class="ti ti-shield-lock"></i>
+          </div>
+          <div class="habilidad-info">
+            <span class="habilidad-nombre">JWT</span>
+            <span class="habilidad-desc">Autenticación & Sesiones</span>
+          </div>
+        </div>
+
+        <div class="habilidad-card" data-skill="github">
+          <div class="habilidad-icon-wrap">
+            <i class="ti ti-brand-github"></i>
+          </div>
+          <div class="habilidad-info">
+            <span class="habilidad-nombre">Git & GitHub</span>
+            <span class="habilidad-desc">Control de Versiones & Flujos</span>
+          </div>
+        </div>
+
+        <div class="habilidad-card" data-skill="api">
+          <div class="habilidad-icon-wrap">
+            <i class="ti ti-api"></i>
+          </div>
+          <div class="habilidad-info">
+            <span class="habilidad-nombre">APIs REST</span>
+            <span class="habilidad-desc">Integración & Consumo de Servicios</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="section">
+      <div class="ambient-glow ambient-glow--proj"></div>
+      <div class="section-header reveal">
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <div class="section-divider"></div>
+        <p class="section-lead">
           Cada proyecto representa una oportunidad para aprender, experimentar y
-          aplicar buenas prácticas de desarrollo web.
+          aplicar buenas prácticas de ingeniería de software.
         </p>
-        <div class="proyectos-contenedor">
-          <article class="proyecto">
-            <div class="proyecto-imagen">
-              <span>Proyecto 01</span>
+      </div>
+
+      <div class="proyectos-contenedor">
+        <!-- Proyecto 01 -->
+        <article class="proyecto reveal">
+          <div class="proyecto-mockup mockup--portfolio">
+            <div class="mockup-bar">
+              <span class="mockup-dot red"></span>
+              <span class="mockup-dot yellow"></span>
+              <span class="mockup-dot green"></span>
+              <span class="mockup-title">johannescordero.dev</span>
             </div>
-
-            <div class="proyecto-contenido">
-              <h3>Portafolio Personal</h3>
-
-              <p>
-                Portafolio web personal desarrollado para presentar mi
-                experiencia, habilidades y proyectos como desarrollador
-                Frontend.
-              </p>
-
-              <div class="proyecto-enlaces">
-                <a href="#" target="_blank" rel="noopener noreferrer"
-                  >Ver proyecto</a
-                >
-                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <div class="mockup-screen">
+              <div class="mockup-code">
+                <span class="code-line"><span class="code-kw">const</span> developer = {</span>
+                <span class="code-line indent">name: <span class="code-str">'Johannes Cordero'</span>,</span>
+                <span class="code-line indent">role: <span class="code-str">'Full Stack Engineer'</span>,</span>
+                <span class="code-line indent">available: <span class="code-bool">true</span></span>
+                <span class="code-line">};</span>
               </div>
             </div>
-          </article>
+          </div>
 
-          <article class="proyecto">
-            <div class="proyecto-imagen">
-              <span>Proyecto 02</span>
+          <div class="proyecto-contenido">
+            <div class="proyecto-tags">
+              <span class="tag-tech">HTML5</span>
+              <span class="tag-tech">CSS3</span>
+              <span class="tag-tech">JavaScript</span>
             </div>
 
-            <div class="proyecto-contenido">
-              <h3>Aplicación Web</h3>
-
-              <p>
-                Aplicación web desarrollada como proyecto práctico para trabajar
-                interfaces dinámicas, manejo de datos y experiencia de usuario.
-              </p>
-
-              <div class="proyecto-enlaces">
-                <a href="#" target="_blank" rel="noopener noreferrer"
-                  >Ver proyecto</a
-                >
-                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="proyecto">
-            <div class="proyecto-imagen">
-              <span>Proyecto 03</span>
-            </div>
-
-            <div class="proyecto-contenido">
-              <h3>Aplicación Full Stack</h3>
-
-              <p>
-                Aplicación web con frontend y backend, incluyendo autenticación,
-                gestión de datos y comunicación mediante una API.
-              </p>
-
-              <div class="proyecto-enlaces">
-                <a href="#" target="_blank" rel="noopener noreferrer"
-                  >Ver proyecto</a
-                >
-                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="proyecto">
-            <div class="proyecto-imagen">
-              <span>Proyecto 04</span>
-            </div>
-
-            <div class="proyecto-contenido">
-              <h3>Aplicación Full Stack</h3>
-
-              <p>
-                Aplicación web con frontend y backend, incluyendo autenticación,
-                gestión de datos y comunicación mediante una API.
-              </p>
-
-              <div class="proyecto-enlaces">
-                <a href="#" target="_blank" rel="noopener noreferrer"
-                  >Ver proyecto</a
-                >
-                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="contacto">
-        <div class="contacto-contenido">
-          <div class="contacto-texto">
-            <h3>¿Tienes un proyecto en mente?</h3>
+            <h3>Portafolio Personal Web</h3>
 
             <p>
-              Estoy abierto a nuevas oportunidades, proyectos y colaboraciones.
-              Si quieres ponerte en contacto conmigo, puedes hacerlo a través de
-              cualquiera de los siguientes medios.
+              Sitio web personal desarrollado con estándares modernos, diseño responsivo, alternancia fluida de tema
+              claro/oscuro y micro-interacciones de alto impacto visual.
             </p>
+
+            <div class="proyecto-enlaces">
+              <a href="#home" class="link-proy link-proy--primary">
+                <span>Ver proyecto</span>
+                <i class="ti ti-arrow-up-right"></i>
+              </a>
+              <a href="https://github.com/JohannesCordero" target="_blank" rel="noopener noreferrer"
+                class="link-proy link-proy--sec">
+                <i class="ti ti-brand-github"></i>
+                <span>GitHub</span>
+              </a>
+            </div>
           </div>
-          <div class="contacto-enlaces">
-            <a href="mailto:johannescordero30@icloud.com" class="contacto-item">
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-gmail"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M16 20h3a1 1 0 0 0 1 -1v-14a1 1 0 0 0 -1 -1h-3v16" />
-                  <path d="M5 20h3v-16h-3a1 1 0 0 0 -1 1v14a1 1 0 0 0 1 1" />
-                  <path d="M16 4l-4 4l-4 -4" />
-                  <path d="M4 6.5l8 7.5l8 -7.5" /></svg
-              ></span>
-              <div>
-                <h4>Correo</h4>
-                <p>johannescordero30@icloud.com</p>
-              </div>
-            </a>
+        </article>
 
-            <a href="whatsapp://send?phone=63043978" class="contacto-item">
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-                  <path
-                    d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
-                  /></svg
-              ></span>
-              <div>
-                <h4>Whatsapp</h4>
-                <p>+506 6304-3978</p>
+        <!-- Proyecto 02 -->
+        <article class="proyecto reveal">
+          <div class="proyecto-mockup mockup--webapp">
+            <div class="mockup-bar">
+              <span class="mockup-dot red"></span>
+              <span class="mockup-dot yellow"></span>
+              <span class="mockup-dot green"></span>
+              <span class="mockup-title">app-dashboard.local</span>
+            </div>
+            <div class="mockup-screen">
+              <div class="mockup-dashboard">
+                <div class="dashboard-metric">
+                  <span class="metric-val">99.8%</span>
+                  <span class="metric-lbl">Uptime</span>
+                </div>
+                <div class="dashboard-chart">
+                  <span class="chart-bar h-40"></span>
+                  <span class="chart-bar h-70"></span>
+                  <span class="chart-bar h-95"></span>
+                  <span class="chart-bar h-60"></span>
+                  <span class="chart-bar h-85"></span>
+                </div>
               </div>
-            </a>
+            </div>
+          </div>
 
-            <a
-              href="#"
-              class="contacto-item"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
-                  /></svg
-              ></span>
-              <div>
-                <h4>GitHub</h4>
-                <p>Mi perfil de GitHub</p>
-              </div>
-            </a>
+          <div class="proyecto-contenido">
+            <div class="proyecto-tags">
+              <span class="tag-tech">React</span>
+              <span class="tag-tech">JavaScript</span>
+              <span class="tag-tech">CSS Grid</span>
+            </div>
 
-            <a
-              href="#"
-              class="contacto-item"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M8 11v5" />
-                  <path d="M8 8v.01" />
-                  <path d="M12 16v-5" />
-                  <path d="M16 16v-3a2 2 0 1 0 -4 0" />
-                  <path
-                    d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4l0 -10"
-                  /></svg
-              ></span>
-              <div>
-                <h4>LinkedIn</h4>
-                <p>Mi perfil profesional</p>
+            <h3>Aplicación Web Interactiva</h3>
+
+            <p>
+              Aplicación web interactiva desarrollada para la manipulación dinámica del DOM, gestión de estados de
+              interfaz, consumo de APIs y experiencia de usuario fluida.
+            </p>
+
+            <div class="proyecto-enlaces">
+              <a href="#" class="link-proy link-proy--primary">
+                <span>Ver proyecto</span>
+                <i class="ti ti-arrow-up-right"></i>
+              </a>
+              <a href="https://github.com/JohannesCordero" target="_blank" rel="noopener noreferrer"
+                class="link-proy link-proy--sec">
+                <i class="ti ti-brand-github"></i>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 03 -->
+        <article class="proyecto reveal">
+          <div class="proyecto-mockup mockup--fullstack">
+            <div class="mockup-bar">
+              <span class="mockup-dot red"></span>
+              <span class="mockup-dot yellow"></span>
+              <span class="mockup-dot green"></span>
+              <span class="mockup-title">api-service.cloud</span>
+            </div>
+            <div class="mockup-screen">
+              <div class="mockup-api">
+                <div class="api-endpoint"><span class="badge-method get">GET</span> /api/v1/data <span
+                    class="status-200">200 OK</span></div>
+                <div class="api-endpoint"><span class="badge-method post">POST</span> /api/v1/auth <span
+                    class="status-200">201 OK</span></div>
+                <div class="api-endpoint"><span class="badge-method jwt">JWT</span> Bearer Token [Verified]</div>
               </div>
-            </a>
+            </div>
+          </div>
+
+          <div class="proyecto-contenido">
+            <div class="proyecto-tags">
+              <span class="tag-tech">Node.js</span>
+              <span class="tag-tech">PostgreSQL</span>
+              <span class="tag-tech">JWT</span>
+            </div>
+
+            <h3>Aplicación Full Stack & API</h3>
+
+            <p>
+              Sistema web integral con arquitectura frontend-backend desacoplada, autenticación robusta mediante tokens
+              JWT, operaciones CRUD y validación en base de datos.
+            </p>
+
+            <div class="proyecto-enlaces">
+              <a href="#" class="link-proy link-proy--primary">
+                <span>Ver proyecto</span>
+                <i class="ti ti-arrow-up-right"></i>
+              </a>
+              <a href="https://github.com/JohannesCordero" target="_blank" rel="noopener noreferrer"
+                class="link-proy link-proy--sec">
+                <i class="ti ti-brand-github"></i>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 04 -->
+        <article class="proyecto reveal">
+          <div class="proyecto-mockup mockup--cloud">
+            <div class="mockup-bar">
+              <span class="mockup-dot red"></span>
+              <span class="mockup-dot yellow"></span>
+              <span class="mockup-dot green"></span>
+              <span class="mockup-title">supabase-cloud.io</span>
+            </div>
+            <div class="mockup-screen">
+              <div class="mockup-db">
+                <div class="db-row"><i class="ti ti-table"></i> <span>users_schema</span> <span class="db-badge">RLS
+                    Active</span></div>
+                <div class="db-row"><i class="ti ti-key"></i> <span>auth_policy</span> <span
+                    class="db-badge">Encrypted</span></div>
+                <div class="db-row"><i class="ti ti-bolt"></i> <span>realtime_sync</span> <span
+                    class="db-badge">Connected</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="proyecto-contenido">
+            <div class="proyecto-tags">
+              <span class="tag-tech">React</span>
+              <span class="tag-tech">Supabase</span>
+              <span class="tag-tech">REST APIs</span>
+            </div>
+
+            <h3>Gestión de Datos en Tiempo Real</h3>
+
+            <p>
+              Aplicación en la nube implementada con Supabase como backend-as-a-service, sincronización de registros en
+              tiempo real, políticas RLS y frontend reactivo en React.
+            </p>
+
+            <div class="proyecto-enlaces">
+              <a href="#" class="link-proy link-proy--primary">
+                <span>Ver proyecto</span>
+                <i class="ti ti-arrow-up-right"></i>
+              </a>
+              <a href="https://github.com/JohannesCordero" target="_blank" rel="noopener noreferrer"
+                class="link-proy link-proy--sec">
+                <i class="ti ti-brand-github"></i>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section">
+      <div class="contacto-contenido">
+        <div class="contacto-texto reveal">
+          <h2 class="section-title">¿Tienes un proyecto o vacante en mente?</h2>
+          <div class="section-divider"></div>
+
+          <p>
+            Estoy abierto a nuevas oportunidades de trabajo, proyectos colaborativos y desafíos técnicos. Si deseas
+            charlar sobre una propuesta o simplemente saludar, contáctame por cualquiera de estos canales.
+          </p>
+
+          <div class="contacto-status-card">
+            <div class="status-indicator">
+              <span class="status-ping"></span>
+              <span class="status-point"></span>
+            </div>
+            <div>
+              <strong>Respuesta rápida garantizada</strong>
+              <p>Normalmente respondo en menos de 24 horas hábiles.</p>
+            </div>
           </div>
         </div>
-      </section>
-    </main>
 
-    <footer>
-      <div class="footer-contenido">
-        <div class="footer-info">
-          <h3>Johannes André Cordero Anchía</h3>
-        </div>
+        <div class="contacto-enlaces reveal">
+          <a href="mailto:johannescordero30@icloud.com" class="contacto-item">
+            <div class="contacto-icon-box">
+              <i class="ti ti-mail"></i>
+            </div>
+            <div class="contacto-details">
+              <h4>Correo Electrónico</h4>
+              <p>johannescordero30@icloud.com</p>
+            </div>
+            <i class="ti ti-chevron-right contacto-arrow"></i>
+          </a>
 
-        <div class="footer-enlaces">
-          <a href="#home">Inicio</a>
-          <a href="#experiencia">Experiencia</a>
-          <a href="#proyectos">Proyectos</a>
+          <a href="https://wa.me/50663043978" target="_blank" rel="noopener noreferrer" class="contacto-item">
+            <div class="contacto-icon-box">
+              <i class="ti ti-brand-whatsapp"></i>
+            </div>
+            <div class="contacto-details">
+              <h4>WhatsApp</h4>
+              <p>+506 6304-3978</p>
+            </div>
+            <i class="ti ti-chevron-right contacto-arrow"></i>
+          </a>
+
+          <a href="https://github.com/JohannesCordero" class="contacto-item" target="_blank" rel="noopener noreferrer">
+            <div class="contacto-icon-box">
+              <i class="ti ti-brand-github"></i>
+            </div>
+            <div class="contacto-details">
+              <h4>GitHub</h4>
+              <p>github.com/JohannesCordero</p>
+            </div>
+            <i class="ti ti-chevron-right contacto-arrow"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/johannes-cordero-anchia/" class="contacto-item" target="_blank"
+            rel="noopener noreferrer">
+            <div class="contacto-icon-box">
+              <i class="ti ti-brand-linkedin"></i>
+            </div>
+            <div class="contacto-details">
+              <h4>LinkedIn</h4>
+              <p>in/johannes-cordero-anchia</p>
+            </div>
+            <i class="ti ti-chevron-right contacto-arrow"></i>
+          </a>
         </div>
       </div>
+    </section>
+  </main>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 Johannes Cordero.</p>
+  <footer>
+    <div class="footer-contenido">
+      <div class="footer-info">
+        <a class="logo logo--footer" href="#home">
+          <span class="logo-name">Johannes</span>
+          <span class="logo-surname">Cordero</span>
+        </a>
+        <p class="footer-tagline">Ingeniero en Sistemas de Información | Desarrollador Full Stack</p>
       </div>
-    </footer>
 
-    <script>
-      // Manejo de la pantalla sin conexión
-      const offlineScreen = document.getElementById("offline-screen");
+      <div class="footer-enlaces">
+        <a href="#home">Inicio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
 
-      function updateOnlineStatus() {
-        if (navigator.onLine) {
-          offlineScreen.classList.add("offline-hidden");
-        } else {
-          offlineScreen.classList.remove("offline-hidden");
-        }
+    <div class="footer-bottom">
+      <p>&copy; 2026 Johannes André Cordero Anchía. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Manejo de la pantalla sin conexión
+    const offlineScreen = document.getElementById("offline-screen");
+
+    function updateOnlineStatus() {
+      if (navigator.onLine) {
+        offlineScreen.classList.add("offline-hidden");
+      } else {
+        offlineScreen.classList.remove("offline-hidden");
       }
+    }
 
-      window.addEventListener("online", updateOnlineStatus);
-      window.addEventListener("offline", updateOnlineStatus);
+    window.addEventListener("online", updateOnlineStatus);
+    window.addEventListener("offline", updateOnlineStatus);
+    updateOnlineStatus();
 
-      // Chequear el estado inicial al cargar
-      updateOnlineStatus();
+    // 2. Ocultar pantalla de carga al terminar de cargar la página
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      setTimeout(() => {
+        loader.classList.add("loader-hidden");
+      }, 700);
+    });
 
-      // Ocultar pantalla de carga al terminar de cargar la página
-      window.addEventListener("load", () => {
-        const loader = document.getElementById("loader");
-        // Agregamos un pequeño retraso para que se vea la animación
-        setTimeout(() => {
-          loader.classList.add("loader-hidden");
-        }, 1000);
-      });
+    // 3. Control del Tema Claro / Oscuro con View Transitions
+    const toggleTema = document.querySelector(".switch-tema input");
+    const temaGuardado = localStorage.getItem("tema");
 
-      const toggleTema = document.querySelector(".switch-tema input");
+    if (temaGuardado === "light") {
+      document.documentElement.classList.add("light-mode");
+      toggleTema.checked = true;
+    }
 
-      // Restaurar preferencia del usuario
-      const temaGuardado = localStorage.getItem("tema");
-      if (temaGuardado === "light") {
+    function aplicarTema(esClaro) {
+      if (esClaro) {
         document.documentElement.classList.add("light-mode");
-        toggleTema.checked = true;
+        localStorage.setItem("tema", "light");
+      } else {
+        document.documentElement.classList.remove("light-mode");
+        localStorage.setItem("tema", "dark");
       }
+    }
 
-      // Función que aplica o quita la clase
-      function aplicarTema(esClaro) {
-        if (esClaro) {
-          document.documentElement.classList.add("light-mode");
-          localStorage.setItem("tema", "light");
-        } else {
-          document.documentElement.classList.remove("light-mode");
-          localStorage.setItem("tema", "dark");
-        }
+    toggleTema.addEventListener("change", (e) => {
+      if (!document.startViewTransition) {
+        aplicarTema(e.target.checked);
+        return;
       }
-
-      toggleTema.addEventListener("change", (e) => {
-        // Verificamos si el navegador soporta la API de transiciones
-        if (!document.startViewTransition) {
-          aplicarTema(e.target.checked);
-          return;
-        }
-
-        // Ejecutamos la animación de la vista
-        document.startViewTransition(() => {
-          aplicarTema(e.target.checked);
-        });
+      document.startViewTransition(() => {
+        aplicarTema(e.target.checked);
       });
-    </script>
-  </body>
+    });
+
+    // 4. Menú móvil inteligente y backdrop
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const navBackdrop = document.getElementById("nav-backdrop");
+
+    function toggleMobileMenu() {
+      const isOpen = navLinks.classList.toggle("nav-open");
+      navBackdrop.classList.toggle("active", isOpen);
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      document.body.classList.toggle("no-scroll", isOpen);
+    }
+
+    function closeMobileMenu() {
+      navLinks.classList.remove("nav-open");
+      navBackdrop.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("no-scroll");
+    }
+
+    menuToggle.addEventListener("click", toggleMobileMenu);
+    navBackdrop.addEventListener("click", closeMobileMenu);
+
+    document.querySelectorAll(".nav-item").forEach((link) => {
+      link.addEventListener("click", () => {
+        closeMobileMenu();
+      });
+    });
+
+    // 5. Scroll Spy para resaltar enlace activo
+    const sections = document.querySelectorAll("section[id]");
+    const navItems = document.querySelectorAll(".nav-item");
+
+    function highlightNavOnScroll() {
+      const scrollY = window.pageYOffset + 140;
+
+      sections.forEach((current) => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop;
+        const sectionId = current.getAttribute("id");
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navItems.forEach((item) => {
+            item.classList.remove("active");
+            if (item.getAttribute("href") === `#${sectionId}`) {
+              item.classList.add("active");
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener("scroll", highlightNavOnScroll, { passive: true });
+
+    // 6. Animaciones Scroll Reveal con IntersectionObserver
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("revealed");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -40px 0px"
+        }
+      );
+
+      revealElements.forEach((el) => revealObserver.observe(el));
+    } else {
+      revealElements.forEach((el) => el.classList.add("revealed"));
+    }
+  </script>
+</body>
+
 </html>
