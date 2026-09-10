@@ -127,6 +127,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -135,6 +137,7 @@ body {
   color: var(--text-primary);
   line-height: 1.65;
   overflow-x: hidden;
+  max-width: 100%;
   position: relative;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
@@ -147,10 +150,7 @@ body.no-scroll {
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
   background-image: radial-gradient(var(--grid-dot-color) 1.5px, transparent 1.5px);
   background-size: 32px 32px;
   pointer-events: none;
@@ -212,6 +212,7 @@ ul {
   position: relative;
   padding: 5.5rem 8%;
   border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
 }
 
 .section-header {
@@ -1950,7 +1951,7 @@ footer {
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 280px;
     height: 100vh;
     background: var(--bg-surface-elevated);
@@ -1959,13 +1960,18 @@ footer {
     align-items: flex-start;
     padding: 6rem 2rem 2rem;
     gap: 1.5rem;
-    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     z-index: 1001;
   }
 
   .nav-links.nav-open {
-    right: 0;
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .nav-item {
